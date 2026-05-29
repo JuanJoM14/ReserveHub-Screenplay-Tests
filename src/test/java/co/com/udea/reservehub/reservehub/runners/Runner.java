@@ -8,7 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "co.com.udea.reservehub.reservehub.stepdefinitions",
-        tags = "@happy",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class Runner {}

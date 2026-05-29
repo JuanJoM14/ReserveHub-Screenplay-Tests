@@ -39,4 +39,12 @@ public class ClienteData {
         body.put("phone", phone);
         return body;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Registro de cliente en ReserveHub" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-28T22:36:53.403Z" hostname="COMPUJUANJO" time="4.182">
+<testsuite name="Registro de cliente en ReserveHub" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-05-29T19:26:24.344Z" hostname="COMPUJUANJO" time="6.639">
   <properties/>
-  <testcase name="Registro exitoso de cliente" classname="Registro de cliente en ReserveHub" time="4.182"/>
+  <testcase name="Registro exitoso de cliente" classname="Registro de cliente en ReserveHub" time="3.501"/>
+  <testcase name="Login exitoso de cliente" classname="Registro de cliente en ReserveHub" time="0.873"/>
+  <testcase name="Login fallido por credenciales invalidas #1" classname="Registro de cliente en ReserveHub" time="0.648"/>
+  <testcase name="Login fallido por credenciales invalidas #2" classname="Registro de cliente en ReserveHub" time="0.601"/>
+  <testcase name="Registro fallido por correo duplicado" classname="Registro de cliente en ReserveHub" time="0.53"/>
+  <testcase name="Registro fallido con datos invalidos #1" classname="Registro de cliente en ReserveHub" time="0.116"/>
+  <testcase name="Registro fallido con datos invalidos #2" classname="Registro de cliente en ReserveHub" time="0.079"/>
+  <testcase name="Registro fallido con datos invalidos #3" classname="Registro de cliente en ReserveHub" time="0.101"/>
+  <testcase name="Registro fallido con datos invalidos #4" classname="Registro de cliente en ReserveHub" time="0.102"/>
+  <testcase name="Registro fallido con datos invalidos #5" classname="Registro de cliente en ReserveHub" time="0.086"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -18,6 +27,86 @@ Registro exitoso de cliente(registro-de-cliente-en-reservehub;registro-exitoso-d
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
 Registro exitoso de cliente
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Login exitoso de cliente(registro-de-cliente-en-reservehub;login-exitoso-de-cliente)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Login exitoso de cliente
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Login fallido por credenciales invalidas(registro-de-cliente-en-reservehub;login-fallido-por-credenciales-invalidas)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Login fallido por credenciales invalidas
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Login fallido por credenciales invalidas
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Registro fallido por correo duplicado(registro-de-cliente-en-reservehub;registro-fallido-por-correo-duplicado)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Registro fallido por correo duplicado
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Registro fallido con datos invalidos(registro-de-cliente-en-reservehub;registro-fallido-con-datos-invalidos)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Registro fallido con datos invalidos
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Registro fallido con datos invalidos
 ----------------------------------------------------------------------
 ]]></system-err>
 </testsuite>

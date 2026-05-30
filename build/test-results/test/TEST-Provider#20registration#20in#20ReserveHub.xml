@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Provider registration in ReserveHub" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-30T05:15:46.703Z" hostname="PC-DE-JUAN" time="4.326">
+  <properties/>
+  <testcase name="Register a provider successfully using an admin-generated code" classname="Provider registration in ReserveHub" time="4.326"/>
+  <system-out><![CDATA[
+Scenario Outline: Register a provider successfully using an admin-generated code                                                                                                                                                   ?[90m# src/test/resources/features/providerregister.feature:13?[0m
+  ?[32mGiven ?[0m?[32mthe admin is logged in with ?[0m?[32m?[1m"juan.admin@correo.com"?[0m?[32m and ?[0m?[32m?[1m"password"?[0m                                                                                                                                                         ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.the_admin_is_logged_in_with_and(java.lang.String,java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mthe admin generates a provider code for registration?[0m                                                                                                                                                                        ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.the_admin_generates_a_provider_code_for_registration()?[0m
+  ?[32mAnd ?[0m?[32mthe provider registers with first name ?[0m?[32m?[1m"Carlos"?[0m?[32m, last name ?[0m?[32m?[1m"Ramirez"?[0m?[32m, email ?[0m?[32m?[1m"pruebasp@proveedor.com"?[0m?[32m, password ?[0m?[32m?[1m"Secure@123"?[0m?[32m, phone ?[0m?[32m?[1m"3001234567"?[0m?[32m, service type ?[0m?[32m?[1m"SALON"?[0m?[32m and service description ?[0m?[32m?[1m"Servicio de salon de fiestas"?[0m ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.the_provider_registers(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe provider registration status should be ?[0m?[32m?[1m200?[0m                                                                                                                                                                              ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.the_provider_registration_status_should_be(java.lang.Integer)?[0m
+  ?[32mAnd ?[0m?[32mthe response contains the registered provider email ?[0m?[32m?[1m"pruebasp@proveedor.com"?[0m                                                                                                                                                 ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.the_response_contains_the_registered_provider_email(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe registered provider has an assigned id?[0m                                                                                                                                                                                   ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.the_registered_provider_has_an_assigned_id()?[0m
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Register a provider successfully using an admin-generated code(provider-registration-in-reservehub;register-a-provider-successfully-using-an-admin-generated-code)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Register a provider successfully using an admin-generated code
+----------------------------------------------------------------------
+]]></system-err>
+</testsuite>

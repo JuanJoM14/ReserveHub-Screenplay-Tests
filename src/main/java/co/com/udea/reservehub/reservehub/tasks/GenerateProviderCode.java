@@ -1,10 +1,11 @@
 package co.com.udea.reservehub.reservehub.tasks;
 
+import co.com.udea.reservehub.reservehub.interactions.ExtractProviderCode;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 
-import static co.com.udea.reservehub.reservehub.utils.TokenKeys.AUTH_TOKEN;
+import static co.com.udea.reservehub.reservehub.utils.MemoryKeys.AUTH_TOKEN;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class GenerateProviderCode implements Task {
@@ -20,7 +21,8 @@ public class GenerateProviderCode implements Task {
                 Post.to("/api/provider-codes")
                         .with(request -> request
                                 .header("Authorization", "Bearer " + token)
-                                .contentType("application/json"))
+                                .contentType("application/json")),
+                ExtractProviderCode.fromResponse()
         );
     }
 }

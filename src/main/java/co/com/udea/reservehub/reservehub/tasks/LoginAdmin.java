@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 
-import static co.com.udea.reservehub.reservehub.utils.TokenKeys.AUTH_TOKEN;
+import static co.com.udea.reservehub.reservehub.utils.MemoryKeys.AUTH_TOKEN;
 
 public class LoginAdmin implements Task {
 

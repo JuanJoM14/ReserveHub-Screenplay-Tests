@@ -1,11 +1,11 @@
-Feature: Provider codes management in ReserveHub
+Feature: Gestion de codigos de proveedor en ReserveHub
 
-  Scenario Outline: Generate a provider code successfully
-    When the admin logs in with "<adminUser>" and "<adminPassword>"
-    And the admin generates a provider code
-    Then the response status should be 200
-    And the response contains a code value starting with "PROV-"
-    And the response indicates the code is active and not used
+  Scenario Outline: Generar un codigo de proveedor exitosamente
+    When el administrador inicia sesion con "<adminUser>" y "<adminPassword>"
+    And el administrador genera un codigo de proveedor
+    Then el estado de la respuesta debe ser 200
+    And la respuesta contiene un codigo que empieza por "PROV-"
+    And la respuesta indica que el codigo esta activo y no usado
 
     Examples:
       | adminUser              | adminPassword |

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Registro de proveedor en ReserveHub</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Registro de proveedor en ReserveHub</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Registro de proveedor en ReserveHub</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">3.117s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+<li>
+<a href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Registrar un proveedor exitosamente usando un codigo generado por el administrador</td>
+<td class="success">1.488s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Registrar un proveedor exitosamente usando un codigo generado por el administrador</td>
+<td class="success">1.629s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+Scenario: Registrar un proveedor exitosamente usando un codigo generado por el administrador ?[90m# src/test/resources/features/providerregister.feature:3?[0m
+  ?[32mGiven ?[0m?[32mque el administrador inicio sesion con credenciales validas?[0m                          ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.theAdminIsLoggedInWithValidCredentials()?[0m
+  ?[32mWhen ?[0m?[32mel administrador genera un codigo de proveedor para el registro?[0m                       ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.theAdminGeneratesAProviderCodeForRegistration()?[0m
+  ?[32mAnd ?[0m?[32mel proveedor completa el registro con datos validos?[0m                                    ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.theProviderCompletesTheRegistrationWithValidData()?[0m
+  ?[32mThen ?[0m?[32mel estado del registro del proveedor debe ser ?[0m?[32m?[1m200?[0m                                     ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.theProviderRegistrationStatusShouldBe(java.lang.Integer)?[0m
+  ?[32mAnd ?[0m?[32mla respuesta contiene el correo del proveedor registrado?[0m                               ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.theResponseContainsTheRegisteredProviderEmail()?[0m
+  ?[32mAnd ?[0m?[32mel proveedor registrado tiene un id asignado?[0m                                           ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.theRegisteredProviderHasAnAssignedId()?[0m
+</pre>
+</span>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Registrar un proveedor exitosamente usando un codigo generado por el administrador(registro-de-proveedor-en-reservehub;registrar-un-proveedor-exitosamente-usando-un-codigo-generado-por-el-administrador)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Registrar un proveedor exitosamente usando un codigo generado por el administrador
+----------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Registrar un proveedor exitosamente usando un codigo generado por el administrador(registro-de-proveedor-en-reservehub;registrar-un-proveedor-exitosamente-usando-un-codigo-generado-por-el-administrador)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Registrar un proveedor exitosamente usando un codigo generado por el administrador
+----------------------------------------------------------------------
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14</a> at 10/06/2026, 10:59:19 a. m.</p>
+</div>
+</div>
+</body>
+</html>

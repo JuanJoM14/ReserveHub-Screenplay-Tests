@@ -1,9 +1,9 @@
-Feature: Provider registration in ReserveHub
+Feature: Registro de proveedor en ReserveHub
 
-  Scenario: Register a provider successfully using an admin-generated code
-    Given the admin is logged in with valid credentials
-    When the admin generates a provider code for registration
-    And the provider completes the registration with valid data
-    Then the provider registration status should be 200
-    And the response contains the registered provider email
-    And the registered provider has an assigned id
+  Scenario: Registrar un proveedor exitosamente usando un codigo generado por el administrador
+    Given que el administrador inicio sesion con credenciales validas
+    When el administrador genera un codigo de proveedor para el registro
+    And el proveedor completa el registro con datos validos
+    Then el estado del registro del proveedor debe ser 200
+    And la respuesta contiene el correo del proveedor registrado
+    And el proveedor registrado tiene un id asignado

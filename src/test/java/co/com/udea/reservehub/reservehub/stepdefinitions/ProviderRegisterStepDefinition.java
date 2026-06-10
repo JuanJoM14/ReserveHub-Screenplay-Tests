@@ -4,6 +4,7 @@ import co.com.udea.reservehub.reservehub.models.LoginData;
 import co.com.udea.reservehub.reservehub.models.ProviderRegisterData;
 import co.com.udea.reservehub.reservehub.questions.ResponseBody;
 import co.com.udea.reservehub.reservehub.questions.ResponseStatus;
+import co.com.udea.reservehub.reservehub.support.TestConfig;
 import co.com.udea.reservehub.reservehub.tasks.GenerateProviderCode;
 import co.com.udea.reservehub.reservehub.tasks.LoginAdmin;
 import co.com.udea.reservehub.reservehub.tasks.RegisterProvider;
@@ -20,52 +21,49 @@ import static org.hamcrest.Matchers.notNullValue;
 
 public class ProviderRegisterStepDefinition {
 
-    private static final String BASE_URL =
-            System.getProperty("restapi.baseurl", "http://localhost:8080");
-
     private ProviderRegisterData providerData;
 
-    @Given("the admin is logged in with valid credentials")
+    @Given("que el administrador inicio sesion con credenciales validas")
     public void theAdminIsLoggedInWithValidCredentials() {
-        OnStage.theActorCalled("Admin").whoCan(CallAnApi.at(BASE_URL));
+        OnStage.theActorCalled("Admin").whoCan(CallAnApi.at(TestConfig.restApiBaseUrl()));
         OnStage.theActorInTheSpotlight().attemptsTo(
                 LoginAdmin.withCredentials(LoginData.of("juan.admin@correo.com", "password"))
         );
     }
 
-    @When("the admin generates a provider code for registration")
+    @When("el administrador genera un codigo de proveedor para el registro")
     public void theAdminGeneratesAProviderCodeForRegistration() {
         OnStage.theActorCalled("Admin").attemptsTo(
                 GenerateProviderCode.now()
         );
     }
 
-    @When("the provider completes the registration with valid data")
+    @When("el proveedor completa el registro con datos validos")
     public void theProviderCompletesTheRegistrationWithValidData() {
         String providerCode = OnStage.theActorCalled("Admin").recall(PROVIDER_CODE);
         providerData = ProviderRegisterData.validWithCode(providerCode);
 
-        OnStage.theActorCalled("Provider").whoCan(CallAnApi.at(BASE_URL));
+        OnStage.theActorCalled("Provider").whoCan(CallAnApi.at(TestConfig.restApiBaseUrl()));
         OnStage.theActorCalled("Provider").attemptsTo(
                 RegisterProvider.with(providerData)
         );
     }
 
-    @Then("the provider registration status should be {int}")
+    @Then("el estado del registro del proveedor debe ser {int}")
     public void theProviderRegistrationStatusShouldBe(Integer expectedStatus) {
         OnStage.theActorCalled("Provider").should(
                 seeThat(ResponseStatus.ofLastResponse(), equalTo(expectedStatus))
         );
     }
 
-    @Then("the response contains the registered provider email")
+    @Then("la respuesta contiene el correo del proveedor registrado")
     public void theResponseContainsTheRegisteredProviderEmail() {
         OnStage.theActorCalled("Provider").should(
                 seeThat(ResponseBody.string("email"), equalTo(providerData.getEmail()))
         );
     }
 
-    @Then("the registered provider has an assigned id")
+    @Then("el proveedor registrado tiene un id asignado")
     public void theRegisteredProviderHasAnAssignedId() {
         OnStage.theActorCalled("Provider").should(
                 seeThat(ResponseBody.string("id"), notNullValue())

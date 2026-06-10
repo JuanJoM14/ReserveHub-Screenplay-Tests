@@ -1,6 +1,7 @@
 package co.com.udea.reservehub.reservehub.stepdefinitions;
 
 import co.com.udea.reservehub.reservehub.models.ClienteData;
+import co.com.udea.reservehub.reservehub.support.TestConfig;
 import co.com.udea.reservehub.reservehub.tasks.RegisterCliente;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -9,11 +10,10 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
 public class RegistroStepDefinition {
 
-    private static final String BASE_URL = "http://localhost:8080";
     private ClienteData clienteData;
 
     private void prepararActorCliente() {
-        OnStage.theActorCalled("cliente").whoCan(CallAnApi.at(BASE_URL));
+        OnStage.theActorCalled("cliente").whoCan(CallAnApi.at(TestConfig.restApiBaseUrl()));
     }
 
     @Given("que una persona desea registrarse como cliente")

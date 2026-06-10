@@ -13,6 +13,10 @@ public class LoginData {
         this.password = password;
     }
 
+    public static LoginData of(String email, String password) {
+        return new LoginData(email, password);
+    }
+
     public static LoginData fromClienteData(ClienteData clienteData) {
         return new LoginData(clienteData.getEmail(), clienteData.getPassword());
     }

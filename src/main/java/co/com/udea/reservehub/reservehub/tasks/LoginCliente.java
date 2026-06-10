@@ -1,6 +1,6 @@
 package co.com.udea.reservehub.reservehub.tasks;
 
-import co.com.udea.reservehub.reservehub.interactions.PostLoginCliente;
+import co.com.udea.reservehub.reservehub.interactions.PostLogin;
 import co.com.udea.reservehub.reservehub.models.LoginData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -21,7 +21,7 @@ public class LoginCliente implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                PostLoginCliente.withBody(loginData.asBody())
+                PostLogin.withBody(loginData.asBody())
         );
     }
 }

@@ -2,7 +2,7 @@ package co.com.udea.reservehub.reservehub.tasks;
 
 import co.com.udea.reservehub.reservehub.interactions.ExtractToken;
 import co.com.udea.reservehub.reservehub.interactions.PostLogin;
-import co.com.udea.reservehub.reservehub.models.LoginWithCredentials;
+import co.com.udea.reservehub.reservehub.models.LoginData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -11,13 +11,13 @@ import static co.com.udea.reservehub.reservehub.utils.MemoryKeys.AUTH_TOKEN;
 
 public class LoginAdmin implements Task {
 
-    private final LoginWithCredentials credentials;
+    private final LoginData credentials;
 
-    public LoginAdmin(LoginWithCredentials credentials) {
+    public LoginAdmin(LoginData credentials) {
         this.credentials = credentials;
     }
 
-    public static LoginAdmin withCredentials(LoginWithCredentials credentials) {
+    public static LoginAdmin withCredentials(LoginData credentials) {
         return Tasks.instrumented(LoginAdmin.class, credentials);
     }
 

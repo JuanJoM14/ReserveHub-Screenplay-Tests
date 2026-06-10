@@ -1,7 +1,7 @@
 package co.com.udea.reservehub.reservehub.stepdefinitions;
 
-import co.com.udea.reservehub.reservehub.questions.ResponseJsonField;
-import co.com.udea.reservehub.reservehub.questions.ResponseStatusCode;
+import co.com.udea.reservehub.reservehub.questions.ResponseBody;
+import co.com.udea.reservehub.reservehub.questions.ResponseStatus;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -20,14 +20,14 @@ public class CommonResponseStepDefinition {
     @Then("la cuenta del cliente queda registrada exitosamente")
     @Then("el cliente puede entrar a su cuenta exitosamente")
     public void laOperacionExitosaDelCliente() {
-        assertThat(ResponseStatusCode.value().answeredBy(OnStage.theActorInTheSpotlight()), equalTo(200));
+        assertThat(ResponseStatus.ofLastResponse().answeredBy(OnStage.theActorInTheSpotlight()), equalTo(200));
     }
 
     @Then("el ingreso a la cuenta es rechazado")
     @Then("el registro es rechazado")
     public void laOperacionEsRechazada() {
         assertThat(
-                ResponseStatusCode.value().answeredBy(OnStage.theActorInTheSpotlight()),
+                ResponseStatus.ofLastResponse().answeredBy(OnStage.theActorInTheSpotlight()),
                 equalTo(400)
         );
     }
@@ -36,7 +36,7 @@ public class CommonResponseStepDefinition {
     @Then("el cliente mantiene su perfil de cliente")
     public void elClienteMantieneSuPerfilDeCliente() {
         assertThat(
-                ResponseJsonField.called("role").answeredBy(OnStage.theActorInTheSpotlight()),
+                ResponseBody.string("role").answeredBy(OnStage.theActorInTheSpotlight()),
                 equalTo("CLIENTE")
         );
     }
@@ -44,7 +44,7 @@ public class CommonResponseStepDefinition {
     @Then("su sesion queda iniciada correctamente")
     public void suSesionQuedaIniciadaCorrectamente() {
         assertThat(
-                ResponseJsonField.called("token").answeredBy(OnStage.theActorInTheSpotlight()),
+                ResponseBody.string("token").answeredBy(OnStage.theActorInTheSpotlight()),
                 not(isEmptyOrNullString())
         );
     }

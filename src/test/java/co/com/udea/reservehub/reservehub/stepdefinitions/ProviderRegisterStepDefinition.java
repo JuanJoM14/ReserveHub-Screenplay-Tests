@@ -1,6 +1,6 @@
 package co.com.udea.reservehub.reservehub.stepdefinitions;
 
-import co.com.udea.reservehub.reservehub.models.LoginWithCredentials;
+import co.com.udea.reservehub.reservehub.models.LoginData;
 import co.com.udea.reservehub.reservehub.models.ProviderRegisterData;
 import co.com.udea.reservehub.reservehub.questions.ResponseBody;
 import co.com.udea.reservehub.reservehub.questions.ResponseStatus;
@@ -29,7 +29,7 @@ public class ProviderRegisterStepDefinition {
     public void theAdminIsLoggedInWithValidCredentials() {
         OnStage.theActorCalled("Admin").whoCan(CallAnApi.at(BASE_URL));
         OnStage.theActorInTheSpotlight().attemptsTo(
-                LoginAdmin.withCredentials(LoginWithCredentials.of("juan.admin@correo.com", "password"))
+                LoginAdmin.withCredentials(LoginData.of("juan.admin@correo.com", "password"))
         );
     }
 

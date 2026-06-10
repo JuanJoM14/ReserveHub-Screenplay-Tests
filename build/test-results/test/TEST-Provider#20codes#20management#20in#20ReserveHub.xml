@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Provider codes management in ReserveHub" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-10T02:03:48.686Z" hostname="COMPUJUANJO" time="8.751">
+<testsuite name="Provider codes management in ReserveHub" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-10T03:20:58.849Z" hostname="COMPUJUANJO" time="10.979">
   <properties/>
-  <testcase name="Generate a provider code successfully" classname="Provider codes management in ReserveHub" time="3.53"/>
-  <testcase name="Generate a provider code successfully" classname="Provider codes management in ReserveHub" time="0.652"/>
+  <testcase name="Generate a provider code successfully" classname="Provider codes management in ReserveHub" time="4.713"/>
+  <testcase name="Generate a provider code successfully" classname="Provider codes management in ReserveHub" time="0.817"/>
   <system-out><![CDATA[
 Scenario Outline: Generate a provider code successfully              ?[90m# src/test/resources/features/providerCode.feature:12?[0m
   ?[32mWhen ?[0m?[32mthe admin logs in with ?[0m?[32m?[1m"juan.admin@correo.com"?[0m?[32m and ?[0m?[32m?[1m"password"?[0m ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderCodeStepDefinition.the_admin_logs_in_with_and(java.lang.String,java.lang.String)?[0m

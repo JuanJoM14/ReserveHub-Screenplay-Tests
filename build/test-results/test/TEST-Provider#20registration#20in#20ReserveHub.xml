@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Provider registration in ReserveHub" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-10T02:03:52.326Z" hostname="COMPUJUANJO" time="6.359">
+<testsuite name="Provider registration in ReserveHub" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-10T03:21:03.778Z" hostname="COMPUJUANJO" time="7.372">
   <properties/>
-  <testcase name="Register a provider successfully using an admin-generated code" classname="Provider registration in ReserveHub" time="1.317"/>
-  <testcase name="Register a provider successfully using an admin-generated code" classname="Provider registration in ReserveHub" time="1.246"/>
+  <testcase name="Register a provider successfully using an admin-generated code" classname="Provider registration in ReserveHub" time="1.564"/>
+  <testcase name="Register a provider successfully using an admin-generated code" classname="Provider registration in ReserveHub" time="1.319"/>
   <system-out><![CDATA[
 Scenario: Register a provider successfully using an admin-generated code ?[90m# src/test/resources/features/providerregister.feature:3?[0m
   ?[32mGiven ?[0m?[32mthe admin is logged in with valid credentials?[0m                    ?[90m# co.com.udea.reservehub.reservehub.stepdefinitions.ProviderRegisterStepDefinition.theAdminIsLoggedInWithValidCredentials()?[0m

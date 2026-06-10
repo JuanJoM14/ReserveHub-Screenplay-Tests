@@ -1,10 +1,9 @@
 package co.com.udea.reservehub.reservehub.stepdefinitions;
 
-import co.com.udea.reservehub.reservehub.models.LoginWithCredentials;
 import co.com.udea.reservehub.reservehub.questions.ResponseBody;
 import co.com.udea.reservehub.reservehub.questions.ResponseStatus;
 import co.com.udea.reservehub.reservehub.tasks.GenerateProviderCode;
-import co.com.udea.reservehub.reservehub.tasks.LoginAdmin;
+import co.com.udea.reservehub.reservehub.tasks.Login;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -22,7 +21,7 @@ public class ProviderCodeStepDefinition {
     public void the_admin_logs_in_with_and(String email, String password) {
         OnStage.theActorCalled("Admin").whoCan(CallAnApi.at(BASE_URL));
         OnStage.theActorInTheSpotlight().attemptsTo(
-                LoginAdmin.withCredentials(LoginWithCredentials.of(email, password))
+                Login.withCredentials(email, password).andSaveToken()
         );
     }
 

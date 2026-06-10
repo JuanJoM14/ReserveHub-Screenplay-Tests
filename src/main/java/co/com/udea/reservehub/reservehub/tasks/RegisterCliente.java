@@ -1,10 +1,10 @@
 package co.com.udea.reservehub.reservehub.tasks;
 
-import co.com.udea.reservehub.reservehub.interactions.PostRegistroCliente;
 import co.com.udea.reservehub.reservehub.models.ClienteData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.rest.interactions.Post;
 
 public class RegisterCliente implements Task {
 
@@ -21,7 +21,10 @@ public class RegisterCliente implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                PostRegistroCliente.withBody(clienteData.asBody())
+                Post.to("/api/users/register/cliente")
+                        .with(request -> request
+                                .contentType("application/json")
+                                .body(clienteData.asBody()))
         );
     }
 }

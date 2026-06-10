@@ -1,11 +1,10 @@
 package co.com.udea.reservehub.reservehub.stepdefinitions;
 
-import co.com.udea.reservehub.reservehub.models.LoginWithCredentials;
 import co.com.udea.reservehub.reservehub.models.ProviderRegisterData;
 import co.com.udea.reservehub.reservehub.questions.ResponseBody;
 import co.com.udea.reservehub.reservehub.questions.ResponseStatus;
 import co.com.udea.reservehub.reservehub.tasks.GenerateProviderCode;
-import co.com.udea.reservehub.reservehub.tasks.LoginAdmin;
+import co.com.udea.reservehub.reservehub.tasks.Login;
 import co.com.udea.reservehub.reservehub.tasks.RegisterProvider;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -29,7 +28,7 @@ public class ProviderRegisterStepDefinition {
     public void theAdminIsLoggedInWithValidCredentials() {
         OnStage.theActorCalled("Admin").whoCan(CallAnApi.at(BASE_URL));
         OnStage.theActorInTheSpotlight().attemptsTo(
-                LoginAdmin.withCredentials(LoginWithCredentials.of("juan.admin@correo.com", "password"))
+                Login.withCredentials("juan.admin@correo.com", "password").andSaveToken()
         );
     }
 

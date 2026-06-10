@@ -27,13 +27,13 @@ public class LoginStepDefinition {
         OnStage.theActorInTheSpotlight().attemptsTo(RegisterCliente.withData(clienteData));
     }
 
-    @When("envia credenciales validas de cliente")
-    public void enviaCredencialesValidasDeCliente() {
+    @When("ingresa con el correo y la contrasena registrados")
+    public void ingresaConElCorreoYLaContrasenaRegistrados() {
         OnStage.theActorInTheSpotlight().attemptsTo(LoginCliente.withCredentials(loginData));
     }
 
-    @When("envia credenciales de login con {string} y {string}")
-    public void enviaCredencialesDeLoginConY(String email, String password) {
+    @When("intenta ingresar con los datos {string} y {string}")
+    public void intentaIngresarConLosDatos(String email, String password) {
         String resolvedEmail = "cliente_registrado".equals(email) ? clienteData.getEmail() : email;
         LoginData loginInvalido = new LoginData(resolvedEmail, password);
         OnStage.theActorInTheSpotlight().attemptsTo(LoginCliente.withCredentials(loginInvalido));

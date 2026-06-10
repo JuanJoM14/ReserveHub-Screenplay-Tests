@@ -16,26 +16,26 @@ public class RegistroStepDefinition {
         OnStage.theActorCalled("cliente").whoCan(CallAnApi.at(BASE_URL));
     }
 
-    @Given("que el usuario quiere registrarse como cliente")
-    public void queElUsuarioQuiereRegistrarseComoCliente() {
+    @Given("que una persona desea registrarse como cliente")
+    public void queUnaPersonaDeseaRegistrarseComoCliente() {
         prepararActorCliente();
         clienteData = ClienteData.valid();
     }
 
-    @When("envia el registro con datos validos")
-    public void enviaElRegistroConDatosValidos() {
+    @When("completa el registro con su nombre, apellido, correo, contrasena y telefono correctos")
+    public void completaElRegistroConSuNombreApellidoCorreoContrasenaYTelefonoCorrectos() {
         OnStage.theActorInTheSpotlight().attemptsTo(RegisterCliente.withData(clienteData));
     }
 
-    @Given("que existe un cliente registrado con un correo determinado")
-    public void queExisteUnClienteRegistradoConUnCorreoDeterminado() {
+    @Given("que ya existe una cuenta de cliente con ese correo")
+    public void queYaExisteUnaCuentaDeClienteConEseCorreo() {
         prepararActorCliente();
         clienteData = ClienteData.valid();
         OnStage.theActorInTheSpotlight().attemptsTo(RegisterCliente.withData(clienteData));
     }
 
-    @When("intenta registrarse nuevamente con el mismo correo")
-    public void intentaRegistrarseNuevamenteConElMismoCorreo() {
+    @When("intenta registrarse usando el mismo correo")
+    public void intentaRegistrarseUsandoElMismoCorreo() {
         ClienteData clienteDuplicado = new ClienteData(
                 "Juan",
                 "Duplicado",
@@ -46,8 +46,8 @@ public class RegistroStepDefinition {
         OnStage.theActorInTheSpotlight().attemptsTo(RegisterCliente.withData(clienteDuplicado));
     }
 
-    @When("envia registro cliente con {string} {string} {string} {string} {string}")
-    public void enviaRegistroClienteCon(String firstName, String lastName, String email, String password, String phone) {
+    @When("intenta registrarse con los datos {string}, {string}, {string}, {string} y {string}")
+    public void intentaRegistrarseConLosDatos(String firstName, String lastName, String email, String password, String phone) {
         prepararActorCliente();
         ClienteData clienteInvalido = new ClienteData(firstName, lastName, email, password, phone);
         OnStage.theActorInTheSpotlight().attemptsTo(RegisterCliente.withData(clienteInvalido));

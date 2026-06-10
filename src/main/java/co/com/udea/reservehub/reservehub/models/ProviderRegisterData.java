@@ -2,6 +2,7 @@ package co.com.udea.reservehub.reservehub.models;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class ProviderRegisterData {
 
@@ -38,12 +39,30 @@ public class ProviderRegisterData {
         return body;
     }
 
-    // -------------------------------------------------------------------------
-    // Builder
-    // -------------------------------------------------------------------------
 
     public static Builder builder() {
         return new Builder();
+    }
+
+    public static ProviderRegisterData validWithCode(String providerCode) {
+        return ProviderRegisterData.builder()
+                .firstName("Carlos")
+                .lastName("Ramirez")
+                .email(uniqueEmail())
+                .password("Secure@123")
+                .phone("3001234567")
+                .providerCode(providerCode)
+                .serviceType("SALON")
+                .serviceDescription("Servicio de salon de fiestas")
+                .build();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    private static String uniqueEmail() {
+        return "pruebasp+" + UUID.randomUUID().toString().substring(0, 8) + "@proveedor.com";
     }
 
     public static class Builder {

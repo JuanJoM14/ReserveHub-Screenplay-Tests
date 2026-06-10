@@ -23,80 +23,50 @@ public class ProviderRegisterStepDefinition {
     private static final String BASE_URL =
             System.getProperty("restapi.baseurl", "http://localhost:8080");
 
-    // -------------------------------------------------------------------------
-    // Admin: login y generación del código
-    // -------------------------------------------------------------------------
+    private ProviderRegisterData providerData;
 
-    @Given("the admin is logged in with {string} and {string}")
-    public void the_admin_is_logged_in_with_and(String email, String password) {
+    @Given("the admin is logged in with valid credentials")
+    public void theAdminIsLoggedInWithValidCredentials() {
         OnStage.theActorCalled("Admin").whoCan(CallAnApi.at(BASE_URL));
         OnStage.theActorInTheSpotlight().attemptsTo(
-                LoginAdmin.withCredentials(LoginWithCredentials.of(email, password))
+                LoginAdmin.withCredentials(LoginWithCredentials.of("juan.admin@correo.com", "password"))
         );
     }
 
     @When("the admin generates a provider code for registration")
-    public void the_admin_generates_a_provider_code_for_registration() {
+    public void theAdminGeneratesAProviderCodeForRegistration() {
         OnStage.theActorCalled("Admin").attemptsTo(
                 GenerateProviderCode.now()
         );
     }
 
-    // -------------------------------------------------------------------------
-    // Proveedor: registro usando el código generado por el admin
-    // -------------------------------------------------------------------------
-
-    @When("the provider registers with first name {string}, last name {string}, email {string}, password {string}, phone {string}, service type {string} and service description {string}")
-    public void the_provider_registers(
-            String firstName,
-            String lastName,
-            String email,
-            String password,
-            String phone,
-            String serviceType,
-            String serviceDescription
-    ) {
-        // El código fue guardado en la memoria del actor Admin
+    @When("the provider completes the registration with valid data")
+    public void theProviderCompletesTheRegistrationWithValidData() {
         String providerCode = OnStage.theActorCalled("Admin").recall(PROVIDER_CODE);
+        providerData = ProviderRegisterData.validWithCode(providerCode);
 
         OnStage.theActorCalled("Provider").whoCan(CallAnApi.at(BASE_URL));
-
-        ProviderRegisterData providerData = ProviderRegisterData.builder()
-                .firstName(firstName)
-                .lastName(lastName)
-                .email(email)
-                .password(password)
-                .phone(phone)
-                .providerCode(providerCode)
-                .serviceType(serviceType)
-                .serviceDescription(serviceDescription)
-                .build();
-
         OnStage.theActorCalled("Provider").attemptsTo(
                 RegisterProvider.with(providerData)
         );
     }
 
-    // -------------------------------------------------------------------------
-    // Verificaciones
-    // -------------------------------------------------------------------------
-
     @Then("the provider registration status should be {int}")
-    public void the_provider_registration_status_should_be(Integer expectedStatus) {
+    public void theProviderRegistrationStatusShouldBe(Integer expectedStatus) {
         OnStage.theActorCalled("Provider").should(
                 seeThat(ResponseStatus.ofLastResponse(), equalTo(expectedStatus))
         );
     }
 
-    @Then("the response contains the registered provider email {string}")
-    public void the_response_contains_the_registered_provider_email(String expectedEmail) {
+    @Then("the response contains the registered provider email")
+    public void theResponseContainsTheRegisteredProviderEmail() {
         OnStage.theActorCalled("Provider").should(
-                seeThat(ResponseBody.string("email"), equalTo(expectedEmail))
+                seeThat(ResponseBody.string("email"), equalTo(providerData.getEmail()))
         );
     }
 
     @Then("the registered provider has an assigned id")
-    public void the_registered_provider_has_an_assigned_id() {
+    public void theRegisteredProviderHasAnAssignedId() {
         OnStage.theActorCalled("Provider").should(
                 seeThat(ResponseBody.string("id"), notNullValue())
         );

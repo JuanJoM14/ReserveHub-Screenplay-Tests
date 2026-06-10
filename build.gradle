@@ -56,6 +56,22 @@ dependencies {
 }
 
 tasks.named('test') {
-    // System configs
+    useJUnit()
+    systemProperties System.getProperties()
+}
 
+tasks.register('serenityReport', JavaExec) {
+    group = 'verification'
+    description = 'Generates the Serenity HTML report from the JSON results.'
+    dependsOn testClasses
+    shouldRunAfter test
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'co.com.udea.reservehub.reservehub.reports.SerenityReportGenerator'
+}
+
+tasks.register('fullReport') {
+    group = 'verification'
+    description = 'Runs the tests and then generates the Serenity HTML report.'
+    dependsOn test
+    finalizedBy serenityReport
 }

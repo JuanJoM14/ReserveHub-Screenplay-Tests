@@ -13,10 +13,6 @@ public class AdminData {
         this.password = password;
     }
 
-    public static AdminData valid() {
-        return new AdminData("juan.admin@correo.com", "password");
-    }
-
     public String getEmail() {
         return email;
     }
